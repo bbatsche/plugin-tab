@@ -60,11 +60,13 @@ Arguments:
       set cdto $PWD
       set -e argv[1]
       popd >/dev/null
+    else
+      set cdto $PWD
     end
   end
 
   if test (count $argv) -gt 0
-    set cmd "; $argv"
+    set cmd "; $argv; exit"
   end
 
   set -l term_program (__tab.term_program)
